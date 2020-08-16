@@ -3,6 +3,17 @@ const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
 
+//ip de acesso
+const ipify = require('ipify2');
+ipify
+  .ipv4()
+  .then((ipv4) => console.log(ipv4))
+  .catch((err) => console.log(err));
+ipify
+  .ipv6()
+  .then((ipv6) => console.log(ipv6))
+  .catch((err) => console.log(err));
+
 //endereço da aplicação
 const absolutepath = __dirname + '/views/index.html';
 console.log(absolutepath + ' endereço');
