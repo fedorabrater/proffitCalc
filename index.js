@@ -5,6 +5,7 @@ dotenv.config();
 
 //endereço da aplicação
 const absolutepath = __dirname + '/views/index.html';
+console.log(absolutepath + ' endereço');
 
 // mudando o endereço visível da aplicação
 app.use(express.static(__dirname + '/public'));

@@ -11,11 +11,12 @@
     <main>
       <h5>Entre os dados no formulário e faça o cálculo.</h5>
 
-      <form action="">
+      <form id="formulario">
         <label for="valorBTC">
          <br> BTC$ - Cotação do Bitcoin Hoje
           <input
             type="number"
+            id = "valorBTC"
             min="1"
             step="0.01"
             name="valorBTC"
@@ -29,6 +30,7 @@
             R$ - Valor Investido
             <input
               type="number"
+              id="valorCompraReal"
               min="1"
               step="0.01"
               name="valorCompraReal"
@@ -44,6 +46,7 @@
             type="number"
             min="1"
             step="0.01"
+            id="valorVendaLiquida"
             name="valorVendaLiquida"
             pattern="[0-9]+([\.][0-9]+)"
             required
@@ -52,9 +55,11 @@
           </label>
         </label>
         <br>
-        <button type="submit">Calcular</button>
+        <button type="button" onclick="getInputValue()";>Calcular</button>
       </br>
       </form>
+      <div id="resultado"></div>
     </main>
+    <script src="/scripts.js"></script>
   </body>
 </html>
