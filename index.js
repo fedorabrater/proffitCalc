@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const dotenv = require('dotenv');
+dotenv.config();
 
 //endereço da aplicação
 const absolutepath = __dirname + '/views/index.html';
@@ -15,8 +17,13 @@ app.get('/', function (req, res) {
 // api para enviar json
 
 app.get('/json', (req, res) => {
+  if (process.env.MESSAGE_STYLE === 'uppercase') {
+    resp = 'Hello Json'.toUpperCase();
+  } else {
+    resp = 'Hello Json';
+  }
   res.json({
-    message: 'Hello json',
+    message: resp,
   });
 });
 
