@@ -31,14 +31,15 @@ function getInputValue() {
   valorBTC = document.getElementById('valorBTC').value;
   valorCompraReal = document.getElementById('valorCompraReal').value;
   valorVendaLiquida = document.getElementById('valorVendaLiquida').value;
-  taxaBtc = valorBTC * 0.0005;
-  lucro = valorVendaLiquida - (valorCompraReal - taxaBtc);
-  taxaRetirada = 2.9 + (lucro * 2) / 100;
+
   if (
     valorVendaLiquida !== null &&
     valorBTC !== null &&
     valorCompraReal !== null
   ) {
+    taxaBtc = valorBTC * 0.0005;
+    lucro = valorVendaLiquida - valorCompraReal - taxaBtc;
+    taxaRetirada = 2.9 + (lucro * 2) / 100;
     return render();
   }
 }
